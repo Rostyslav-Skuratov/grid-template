@@ -1,0 +1,30 @@
+@use "../../../presets" as *;
+@use "../../../mixins" as *;
+
+.form {
+  padding: $gap-lg 0;
+  background-color: $color-primary;
+
+  &__container {
+    display: grid;
+    gap: $gap;
+    
+    @include md-min {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas: "a1 a2 a3";
+    }
+    
+    @include md-sm {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "a1 a1" "a2 a3";
+    }
+    
+    @include sm {
+      grid-template-columns: 1fr;
+      grid-template-areas: "a1" "a2" "a3";
+    }
+
+    @extend %container;
+  }
+}
+
