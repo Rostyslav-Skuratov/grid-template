@@ -7,6 +7,11 @@
   top: 0;
   right: 0;
   left: 0;
+
+  @include md {
+    background-color: rgba($color: $color-gray-dark, $alpha: 0.25);
+    @include box-shadow;
+  }
   
   &__container {
     @extend %container;
