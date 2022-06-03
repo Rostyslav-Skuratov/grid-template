@@ -14,6 +14,11 @@ html {
   overflow-y: scroll;
 }
 
+a {
+  text-decoration: none;
+  color: $color-light;
+}
+
 h1 {
   letter-spacing: 0.08em;
   font-weight: 300;
@@ -33,6 +38,7 @@ h1 {
 }
 
 h2 {
+  margin-top: 0;
   line-height: 1.2em;
   letter-spacing: 0.1em;
   font-family: $font-header;
@@ -60,9 +66,14 @@ h2 {
   }
 }
 
-a {
-  text-decoration: none;
-  color: $color-light;
+h3 {
+  letter-spacing: 0.05em;
+  color: $color-gray;
+  font-size: 1.125rem;
+}
+
+p {
+  color: $color-gray;
 }
 
 button, input, optgroup, select, textarea {

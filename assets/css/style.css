@@ -341,7 +341,7 @@ template {
   display: none;
 }
 
-.form__container, .about__container, .header-contant__container, .header-menu__container {
+.posts__container, .form__container, .about__container, .header-contant__container, .header-menu__container {
   max-width: 1340px;
   padding: 0 20px;
   margin: 0 auto;
@@ -368,6 +368,11 @@ html {
   overflow-y: scroll;
 }
 
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
 h1 {
   letter-spacing: 0.08em;
   font-weight: 300;
@@ -376,15 +381,21 @@ h1 {
 }
 
 h2 {
+  margin-top: 0;
   line-height: 1.2em;
   letter-spacing: 0.1em;
   font-family: "Roboto Slab", serif;
   color: #2d3651;
 }
 
-a {
-  text-decoration: none;
-  color: #ffffff;
+h3 {
+  letter-spacing: 0.05em;
+  color: #637588;
+  font-size: 1.125rem;
+}
+
+p {
+  color: #637588;
 }
 
 button, input, optgroup, select, textarea {
@@ -678,39 +689,30 @@ button, input, optgroup, select, textarea {
 .skill-item:hover .skill-item__overlay {
   opacity: 0.95;
 }
-
 .skill-item:nth-of-type(1) {
   grid-area: a1;
 }
-
 .skill-item:nth-of-type(2) {
   grid-area: a2;
 }
-
 .skill-item:nth-of-type(3) {
   grid-area: a3;
 }
-
 .skill-item:nth-of-type(4) {
   grid-area: a4;
 }
-
 .skill-item:nth-of-type(5) {
   grid-area: a5;
 }
-
 .skill-item:nth-of-type(6) {
   grid-area: a6;
 }
-
 .skill-item:nth-of-type(7) {
   grid-area: a7;
 }
-
 .skill-item:nth-of-type(8) {
   grid-area: a8;
 }
-
 .skill-item:nth-of-type(9) {
   grid-area: a9;
 }
@@ -837,7 +839,85 @@ button, input, optgroup, select, textarea {
 .form-item:nth-of-type(3) {
   grid-area: a3;
 }
+.posts__grid {
+  display: grid;
+  padding-bottom: 20px;
+  gap: 20px;
+}
+.posts__actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
 
+.post-item {
+  -webkit-transition: background-color 0.5s;
+  -o-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+  background-color: #f2f2f2;
+}
+.post-item__link {
+  display: grid;
+  overflow: hidden;
+  height: 100%;
+  grid-template-rows: 300px 1fr;
+}
+.post-item__image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.post-item__image img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.post-item__caption {
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  padding: 20px;
+}
+.post-item__caption--title {
+  -webkit-transition: color 0.5s;
+  -o-transition: color 0.5s;
+  transition: color 0.5s;
+  font-family: "Roboto Slab", serif;
+  text-align: center;
+}
+.post-item__caption--txt {
+  -webkit-transition: color 0.5s;
+  -o-transition: color 0.5s;
+  transition: color 0.5s;
+  text-align: center;
+}
+.post-item:nth-of-type(1) {
+  grid-area: p1;
+}
+.post-item:nth-of-type(2) {
+  grid-area: p2;
+}
+.post-item:nth-of-type(3) {
+  grid-area: p3;
+}
+.post-item:nth-of-type(4) {
+  grid-area: p4;
+}
+.post-item:nth-of-type(5) {
+  grid-area: p5;
+}
+.post-item:nth-of-type(6) {
+  grid-area: p6;
+}
 @media (min-width: 576px) {
   .btn--primary {
     min-width: 350px;
@@ -846,7 +926,6 @@ button, input, optgroup, select, textarea {
     margin-bottom: 30px;
   }
 }
-
 @media (min-width: 768px) {
   .header-navbar__btn {
     display: none;
@@ -873,7 +952,6 @@ button, input, optgroup, select, textarea {
     grid-template-areas: "a1 a2 a3";
   }
 }
-
 @media (min-width: 992px) {
   h1 {
     font-size: 3.75rem;
@@ -908,8 +986,14 @@ button, input, optgroup, select, textarea {
   .about-content__paragraph:first-of-type::after {
     right: -50px;
   }
+  .posts {
+    padding: 100px 0;
+  }
+  .posts__grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "p1 p1 p2 p3" "p4 p5 p6 p6";
+  }
 }
-
 @media (max-width: 991.8px) and (min-width: 768px) {
   h1 {
     font-size: 2.5rem;
@@ -940,8 +1024,14 @@ button, input, optgroup, select, textarea {
   .about-content__paragraph:first-of-type::after {
     right: -20px;
   }
+  .posts {
+    padding: 80px 0;
+  }
+  .posts__grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "p1 p1 p2" "p3 p4 p4" "p5 p5 p6";
+  }
 }
-
 @media (max-width: 767.8px) {
   h1 {
     font-size: 1.875rem;
@@ -983,8 +1073,10 @@ button, input, optgroup, select, textarea {
   .about {
     padding: 60px 0;
   }
+  .posts {
+    padding: 60px 0;
+  }
 }
-
 @media (max-width: 767.8px) and (min-width: 576px) {
   h2 {
     margin-bottom: 2.25rem;
@@ -1006,8 +1098,11 @@ button, input, optgroup, select, textarea {
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "a1 a1" "a2 a3";
   }
+  .posts__grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "p1 p2" "p3 p4" "p5 p6";
+  }
 }
-
 @media (max-width: 575.8px) {
   h2 {
     margin-bottom: 2.25rem;
@@ -1050,5 +1145,8 @@ button, input, optgroup, select, textarea {
   .form__container {
     grid-template-columns: 1fr;
     grid-template-areas: "a1" "a2" "a3";
+  }
+  .posts__grid {
+    grid-template-areas: "p1" "p2" "p3" "p4" "p5" "p6";
   }
 }

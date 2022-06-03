@@ -14,6 +14,7 @@
 @use "components/sections/section-about";
 @use "components/sections/form/form";
 @use "components/sections/form/form-item";
-@use "components/sections/section-posts";
+@use "components/sections/posts/post.scss";
+@use "components/sections/posts/post-item.scss";
 
 @use "components/footer/footer";
