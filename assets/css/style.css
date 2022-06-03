@@ -341,7 +341,7 @@ template {
   display: none;
 }
 
-.posts__container, .form__container, .about__container, .header-contant__container, .header-menu__container {
+.footer__container, .posts__container, .form__container, .about__container, .header-contant__container, .header-menu__container {
   max-width: 1340px;
   padding: 0 20px;
   margin: 0 auto;
@@ -869,17 +869,17 @@ button, input, optgroup, select, textarea {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  overflow: hidden;
   -ms-flex-line-pack: center;
       align-content: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-.post-item__image img {
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  -o-transition: transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  overflow: hidden;
 }
 .post-item__caption {
   display: grid;
@@ -900,6 +900,14 @@ button, input, optgroup, select, textarea {
   transition: color 0.5s;
   text-align: center;
 }
+.post-item:hover .post-item__image, .post-item:focus .post-item__image {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+}
+.post-item:hover .post-item__link, .post-item:focus .post-item__link {
+  color: black;
+}
 .post-item:nth-of-type(1) {
   grid-area: p1;
 }
@@ -917,6 +925,51 @@ button, input, optgroup, select, textarea {
 }
 .post-item:nth-of-type(6) {
   grid-area: p6;
+}
+
+.footer {
+  background-color: #2d3651;
+  padding: 50px 20px 70px;
+  text-align: center;
+}
+.footer__social {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 40px;
+}
+.footer__social .fab {
+  font-size: 36px;
+}
+.footer__social--link {
+  display: block;
+  padding: 10px;
+  -webkit-transition: color 0.5s;
+  -o-transition: color 0.5s;
+  transition: color 0.5s;
+}
+.footer__social::after {
+  position: absolute;
+  bottom: -20px;
+  left: calc(50% - 37.5px);
+  width: 75px;
+  height: 2px;
+  content: "";
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.footer__copy span:nth-of-type(1) {
+  margin-right: -0.5em;
+  letter-spacing: 0.33em;
+  font-weight: 100;
+}
+.footer__copy span:nth-of-type(2) {
+  letter-spacing: 0.05em;
+  color: #e5e5e5;
+  font-weight: 700;
 }
 @media (min-width: 576px) {
   .btn--primary {
