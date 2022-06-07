@@ -406,6 +406,10 @@ button, input, optgroup, select, textarea {
   outline: none;
 }
 
+img {
+  border-style: none;
+}
+
 .btn {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -839,47 +843,45 @@ button, input, optgroup, select, textarea {
 .form-item:nth-of-type(3) {
   grid-area: a3;
 }
+
+.posts h2 {
+  margin-top: 0;
+}
 .posts__grid {
   display: grid;
-  padding-bottom: 20px;
   gap: 20px;
-}
-.posts__actions {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  padding: 0 0 20px;
 }
 
 .post-item {
-  -webkit-transition: background-color 0.5s;
-  -o-transition: background-color 0.5s;
-  transition: background-color 0.5s;
   background-color: #f2f2f2;
 }
 .post-item__link {
   display: grid;
-  overflow: hidden;
   height: 100%;
   grid-template-rows: 300px 1fr;
 }
-.post-item__image {
+.post-item__img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-line-pack: center;
-      align-content: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  background-color: #2d3651;
+  overflow: hidden;
+}
+.post-item__img img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   -webkit-transition: -webkit-transform 0.5s;
   transition: -webkit-transform 0.5s;
   -o-transition: transform 0.5s;
   transition: transform 0.5s;
   transition: transform 0.5s, -webkit-transform 0.5s;
-  overflow: hidden;
 }
 .post-item__caption {
   display: grid;
@@ -887,26 +889,18 @@ button, input, optgroup, select, textarea {
       align-content: center;
   padding: 20px;
 }
-.post-item__caption--title {
-  -webkit-transition: color 0.5s;
-  -o-transition: color 0.5s;
-  transition: color 0.5s;
+.post-item__caption h3 {
   font-family: "Roboto Slab", serif;
   text-align: center;
+  -webkit-transition: color 5s;
+  -o-transition: color 5s;
+  transition: color 5s;
 }
-.post-item__caption--txt {
+.post-item__caption p {
   -webkit-transition: color 0.5s;
   -o-transition: color 0.5s;
   transition: color 0.5s;
   text-align: center;
-}
-.post-item:hover .post-item__image, .post-item:focus .post-item__image {
-  -webkit-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-          transform: scale(1.1);
-}
-.post-item:hover .post-item__link, .post-item:focus .post-item__link {
-  color: black;
 }
 .post-item:nth-of-type(1) {
   grid-area: p1;
@@ -1043,8 +1037,8 @@ button, input, optgroup, select, textarea {
     padding: 100px 0;
   }
   .posts__grid {
-    grid-template-columns: repeat(4, 1fr);
     grid-template-areas: "p1 p1 p2 p3" "p4 p5 p6 p6";
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 @media (max-width: 991.8px) and (min-width: 768px) {
@@ -1081,8 +1075,8 @@ button, input, optgroup, select, textarea {
     padding: 80px 0;
   }
   .posts__grid {
-    grid-template-columns: repeat(3, 1fr);
     grid-template-areas: "p1 p1 p2" "p3 p4 p4" "p5 p5 p6";
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 @media (max-width: 767.8px) {
@@ -1152,8 +1146,8 @@ button, input, optgroup, select, textarea {
     grid-template-areas: "a1 a1" "a2 a3";
   }
   .posts__grid {
-    grid-template-columns: 1fr 1fr;
     grid-template-areas: "p1 p2" "p3 p4" "p5 p6";
+    grid-template-columns: 1fr 1fr;
   }
 }
 @media (max-width: 575.8px) {
