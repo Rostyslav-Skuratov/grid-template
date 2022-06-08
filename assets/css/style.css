@@ -406,10 +406,6 @@ button, input, optgroup, select, textarea {
   outline: none;
 }
 
-img {
-  border-style: none;
-}
-
 .btn {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -766,10 +762,21 @@ img {
   display: grid;
   gap: 20px;
 }
+.form .btn--primary {
+  width: 100%;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.form .btn--primary:hover, .form .btn--primary:focus {
+  background-color: #d66926;
+  border: 2px solid #ffffff;
+}
 
 .form-item__input {
   display: block;
-  min-width: 100%;
+  width: 100%;
   height: 60px;
   padding: 0 30px;
   -webkit-transition: border 0.5s, background-color 0.5s, border-bottom-color 0.5s;
@@ -819,27 +826,12 @@ img {
 .form-item__input:hover::placeholder, .form-item__input:focus::placeholder {
   color: #8C9BAB;
 }
-
-.form .btn--primary {
-  min-width: 100%;
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0);
-  border-bottom-color: rgba(255, 255, 255, 0.2);
-  background-color: rgba(255, 255, 255, 0.1);
-}
-.form .btn--primary:hover, .form .btn--primary:focus {
-  background-color: #d66926;
-  border: 2px solid #ffffff;
-}
-
 .form-item:nth-of-type(1) {
   grid-area: a1;
 }
-
 .form-item:nth-of-type(2) {
   grid-area: a2;
 }
-
 .form-item:nth-of-type(3) {
   grid-area: a3;
 }
@@ -991,7 +983,7 @@ img {
 }
 @media (min-width: 576px) {
   .btn--primary {
-    min-width: 350px;
+    width: 350px;
   }
   .skills__actions {
     margin-bottom: 30px;
