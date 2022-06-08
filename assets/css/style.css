@@ -850,11 +850,15 @@ img {
 .posts__grid {
   display: grid;
   gap: 20px;
-  padding: 0 0 20px;
+  padding-bottom: 20px;
 }
 
 .post-item {
   background-color: #f2f2f2;
+  overflow: hidden;
+  -webkit-transition: background-color 0.5s;
+  -o-transition: background-color 0.5s;
+  transition: background-color 0.5s;
 }
 .post-item__link {
   display: grid;
@@ -892,15 +896,29 @@ img {
 .post-item__caption h3 {
   font-family: "Roboto Slab", serif;
   text-align: center;
-  -webkit-transition: color 5s;
-  -o-transition: color 5s;
-  transition: color 5s;
-}
-.post-item__caption p {
   -webkit-transition: color 0.5s;
   -o-transition: color 0.5s;
   transition: color 0.5s;
+}
+.post-item__caption p {
   text-align: center;
+  -webkit-transition: color 0.5s;
+  -o-transition: color 0.5s;
+  transition: color 0.5s;
+}
+.post-item:hover {
+  background-color: #d2d2d2;
+}
+.post-item:hover .post-item__caption h3 {
+  color: #2d3651;
+}
+.post-item:hover .post-item__caption p {
+  color: #2d3651;
+}
+.post-item:hover img {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
 }
 .post-item:nth-of-type(1) {
   grid-area: p1;
@@ -938,6 +956,12 @@ img {
 }
 .footer__social .fab {
   font-size: 36px;
+  -webkit-transition: color 0.5s;
+  -o-transition: color 0.5s;
+  transition: color 0.5s;
+}
+.footer__social .fab:hover {
+  color: #d66926;
 }
 .footer__social--link {
   display: block;
@@ -971,6 +995,14 @@ img {
   }
   .skills__actions {
     margin-bottom: 30px;
+  }
+  .posts__actions {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 @media (min-width: 768px) {

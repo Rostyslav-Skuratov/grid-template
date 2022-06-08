@@ -18,6 +18,11 @@
 
     .fab {
       font-size: 36px;
+      transition: color 0.5s;
+
+      &:hover {
+          color: $color-accent;
+        }
     }
 
     &--link {

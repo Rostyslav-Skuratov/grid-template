@@ -3,11 +3,13 @@
 
 .post-item {
   background-color: #f2f2f2;
+  overflow: hidden;
+  transition: background-color 0.5s;
 
   &__link{
     display: grid;
     height: 100%;
-    grid-template-rows: 300px 1fr;
+    grid-template-rows: 300px 1fr; 
   }
 
   &__img {
@@ -32,14 +34,29 @@
     h3 {
       font-family: $font-header;
       text-align: center;
-      transition: color 05s;
+      transition: color 0.5s;
     }
 
     p {
-      transition: color 0.5s;
       text-align: center;
+      transition: color 0.5s;
     }
   }
+
+  &:hover {
+    background-color: #d2d2d2;
+    .post-item__caption h3 {
+      @include color-primary;
+    }
+    
+    .post-item__caption p {
+      @include color-primary;
+    }
+      
+      & img {
+        transform: scale(1.1);
+      }
+    }
 
   &:nth-of-type(1) {
       grid-area: p1;

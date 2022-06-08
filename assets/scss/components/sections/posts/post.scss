@@ -25,7 +25,7 @@
   &__grid {
     display: grid;
     gap: $gap;
-    padding: 0 0 $gap;
+    padding-bottom: $gap;
     
     @include lg-min {
       grid-template-areas: "p1 p1 p2 p3" "p4 p5 p6 p6";
@@ -44,6 +44,13 @@
 
     @include sm {
       grid-template-areas: "p1" "p2" "p3" "p4" "p5" "p6";
+    }
+  }
+  
+  &__actions {
+    @include sm-min {
+      display: flex;
+      justify-content: center;
     }
   }
 }
