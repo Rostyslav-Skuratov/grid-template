@@ -341,7 +341,7 @@ template {
   display: none;
 }
 
-.footer__container, .posts__container, .form__container, .about__container, .header-contant__container, .header-menu__container {
+.footer__container, .posts__container, .form__container, .about__container, .header-content__container, .header-menu__container {
   max-width: 1340px;
   padding: 0 20px;
   margin: 0 auto;
@@ -591,14 +591,14 @@ img {
   color: #d66926;
 }
 
-.header-contant {
+.header-content {
   position: relative;
   z-index: 1;
 }
-.header-contant__title {
+.header-content__title {
   text-align: center;
 }
-.header-contant__actions {
+.header-content__actions {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -613,7 +613,6 @@ img {
 }
 .skills__container {
   display: grid;
-  grid-auto-rows: calc(33.33vh - 13.3333333333px);
 }
 .skills__actions {
   display: -webkit-box;
@@ -781,6 +780,7 @@ img {
   border-bottom-color: rgba(255, 255, 255, 0.25);
   background-color: rgba(255, 255, 255, 0.05);
   font-size: 1.125rem;
+  color: #ffffff;
 }
 .form-item__input::-webkit-input-placeholder {
   color: #637582;
@@ -1005,6 +1005,11 @@ img {
             justify-content: center;
   }
 }
+@media (min-height: 691px) {
+  .skills__container {
+    grid-auto-rows: calc(33.33vh - 13.3333333333px);
+  }
+}
 @media (min-width: 768px) {
   .header-navbar__btn {
     display: none;
@@ -1044,7 +1049,7 @@ img {
     height: 60px;
     font-size: 1.125rem;
   }
-  .header-contant__title {
+  .header-content__title {
     margin: 0 0 53px;
   }
   .skills__container {
@@ -1085,7 +1090,7 @@ img {
     min-width: 200px;
     height: 50px;
   }
-  .header-contant__title {
+  .header-content__title {
     margin: 0 0 43px;
   }
   .skills__container {
@@ -1143,7 +1148,7 @@ img {
   .header-navbar__link {
     padding: 10px 20px;
   }
-  .header-contant__title {
+  .header-content__title {
     margin: 0 0 33px;
   }
   .skill-item__title {
@@ -1182,6 +1187,11 @@ img {
     grid-template-columns: 1fr 1fr;
   }
 }
+@media (max-height: 691px) {
+  .skills__container {
+    grid-auto-rows: 216.6666666667px;
+  }
+}
 @media (max-width: 575.8px) {
   h2 {
     margin-bottom: 2.25rem;
@@ -1191,7 +1201,7 @@ img {
   .btn--primary {
     width: 100%;
   }
-  .header-contant__actions {
+  .header-content__actions {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;

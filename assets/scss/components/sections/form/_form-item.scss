@@ -13,6 +13,7 @@
     border-bottom-color: rgba($color: $color-light, $alpha: 0.25);
     background-color: rgba($color: $color-light, $alpha: 0.05);
     font-size: 1.125rem;
+    color: $color-light;
     
     &::placeholder {
       color: #637582;
